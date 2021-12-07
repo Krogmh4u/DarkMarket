@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@500&display=swap" rel="stylesheet">
+	<title>Dark Market - Home</title>
+</head>
+
+<body>
+	<nav>
+		<ul class="menu">
+			<li><a class="links">Account</a></li>
+			<li><a class="log-out">Log out</a></li>
+		</ul>
+	</nav>
+	<form action="" class="search-box">
+		<input placeholder="Search" type="text" class="search-input">
+	</form>
+	<div class="container">
+		<div class="categories">
+			<div class="weapons"><a href="weapons.html">Weapons</a></div>
+			<div class="equipment"><a href="equipment.html">Equipment</a></div>
+			<div class="drugs"><a href="drugs.html">Drugs</a></div>
+		</div>
+	</div>
+</body>
+
+</html>
