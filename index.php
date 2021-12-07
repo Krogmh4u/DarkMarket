@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="register.css">
+	<link rel="stylesheet" type="text/css" href="sign-in.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@300;500&display=swap" rel="stylesheet">
@@ -26,7 +26,27 @@
 				<button type="submit">Login</button>
 				</form>
 			</div>
-			<p class="wrong">Wrong username or password</p>
+
+			<?php
+                if(isset($_GET['err']) && !empty($_GET['err']))
+                {
+                    $err = htmlspecialchars($_GET['err']);
+                    switch ($err) 
+                    {
+                        case 'incorrectpassword':
+                            ?>
+                                <p class="wrong">Incorrect Password.</p>
+                            <?php
+                        break;
+                        case 'incorrectuser':
+                            ?>
+                                <p class="wrong">Incorrect Username.</p>
+                            <?php
+                    break;
+                    }
+                }
+            ?>
+			
 		</div>
 	</div>
 </body>

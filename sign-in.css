@@ -6,6 +6,7 @@
   --lighten-color1: rgba(255, 255, 255, .05);
   --lighten-color2: rgba(255, 255, 255, .10);
   --alert-color: red;
+  --gradient-color: linear-gradient(90deg, rgba(0,135,114,1) 0%, rgba(102,0,157,1) 100%);
 }
 
 * {
@@ -39,12 +40,11 @@ body {
 
 .login-form {
   width: 350px;
-  height: 350px;
+  height: min-content;
   margin: 0 auto;
   background-color: var(--secondary-color);
   padding: 20px 50px 40px;
   box-shadow: 1px 4px 10px 1px var(--primary-color);
-  font-family: sans-serif;
   border-radius: 5px;
 }
 
@@ -58,34 +58,45 @@ body {
   margin-bottom: 30px;
 }
 
-.login-form input {
-  margin-top: 40px;
-  margin-bottom: 10px;
-  border-radius: 2px;
+.login-form input:focus {
+  outline: purple solid 1px;
 }
 
-.login-form input[type=text] {
-  display: block;
-  height: 3em;
-  padding: 6px 16px;
-  width: 100%;
-  border: none;
-  background-color: #f3f3f3;
-}
-
-.login-form input[type=password] {
-  display: block;
-  height: 3em;
-  padding: 6px 16px;
-  width: 100%;
-  border: none;
-  background-color: #f3f3f3;
-}
-
-
-.login-form label {
+.form-label label {
+  position: absolute;
   color: var(--text-color);
+  transform: translate(20px, 9px);
+  pointer-events: none;
+  background-color: var(--primary-color);
+  font-size: 1.05em;
+  transition: .3s;
+}
+
+.form-label.active label {
+  position: absolute;
+  color: var(--text-color);
+  transform: translate(12px, -15px);
+  pointer-events: none;
   font-size: 0.8em;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.login-form input {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  color: var(--text-color);
+}
+
+.login-form input[type=text], input[type=password], input[type=email] {
+  display: block;
+  height: 3em;
+  padding: 6px 16px;
+  width: 100%;
+  border: none;
+  background-color: var(--primary-color);
+  margin-bottom: 10px;
 }
 
 .login-form input[type=checkbox] {
@@ -115,31 +126,28 @@ body {
 .login-form button[type=submit] {
   display: block;
   font-size: 1.1em;
-  margin: 40px auto 0;
+  margin: 30px auto 0;
   width: 150px;
   height: 50px;
   border-radius: 5px;
   border: none;
   color: var(--text-color);
-  box-shadow: 1px 4px 10px 1px var(--primary-color);
+  box-shadow: 1px 4px 10px 1px var(--primary-color), inset 0px 0px 0px 0px var(--alert-color);
   background: var(--lighten-color1);
+  transform: scale(1.0);
+  transition: 0.2s;
 }
 
 .login-form button[type=submit]:hover {
   cursor: pointer;
-  animation-name: lighten_background_grow;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
+  background: var(--lighten-color2);
+  transform: scale(1.05);
+  box-shadow: 1px 4px 10px 1px var(--primary-color), inset 0px -3px 0px 0px var(--gradient-color);
 }
 
 .wrong {
+  position: absolute;
   color: var(--alert-color);
   transform: translateY(50px);
   font-weight: 300;
-}
-
-@keyframes lighten_background_grow {
-  from {background-color: var(--lighten-color1); transform: scale(1);}
-  to {background-color: var(--lighten-color2); transform: scale(1.05);}
 }
