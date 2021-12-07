@@ -43,12 +43,12 @@
 					{
 						case 'userexists':
 							?>
-								<p class="wrong">User Already Exists.</p>
+								<p class="wrong">Username already exists.</p>
 							<?php
 						break;
 						case 'succes':
 							?>
-								<p class="wrong">Account Successfully created.</p>
+								<p class="wrong">Account successfully created.</p>
 							<?php
 					break;
 					}
