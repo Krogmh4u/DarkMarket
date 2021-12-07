@@ -20,9 +20,9 @@
 	</form>
 	<div class="container">
 		<div class="categories">
-			<div class="weapons"><a href="weapons.html">Weapons</a></div>
-			<div class="equipment"><a href="equipment.html">Equipment</a></div>
-			<div class="drugs"><a href="drugs.html">Drugs</a></div>
+			<div class="weapons"><a href="weapons.php">Weapons</a></div>
+			<div class="equipment"><a href="equipment.php">Equipment</a></div>
+			<div class="drugs"><a href="drugs.php">Drugs</a></div>
 		</div>
 	</div>
 </body>
