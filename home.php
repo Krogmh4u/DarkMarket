@@ -12,7 +12,7 @@
 	<nav>
 		<ul class="menu">
 			<li><a class="links">Account</a></li>
-			<li><a class="log-out">Log oute</a></li>
+			<li><a class="log-out">Log out</a></li>
 		</ul>
 	</nav>
 	<form action="" class="search-box">
