@@ -7,7 +7,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@500&display=swap" rel="stylesheet">
 	<title>Dark Market - Home</title>
 </head>
-hey
+
 <body>
 	<nav>
 		<ul class="menu">
