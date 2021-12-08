@@ -37,38 +37,39 @@
     </div>
     <div class="wrapper">
         <div class="grid-layout">
-            <!-- <div class="ar"><div class="band"><p>M4A1 - 500$</p></div></div> -->
-            <?php
-                function secure($arg){
-                    $arg = htmlspecialchars($arg);
-                    $arg = htmlentities($arg);
-                    $arg = trim($arg);
-                    return $arg;
-                }
+            <!-- <div class="ar article" style="background-image:url(images/weapons/tamere.jpg);"><div class="band"><p>M4A1</p><p>1200$</p></div></div>
+            <div class="pistol article" style="background-image:url(images/weapons/putepute.jpg);"><div class="band"><p>Desert Eagle</p><p>800$</p></div></div> -->
+<?php 
+    function secure($arg){
+        $arg = htmlspecialchars($arg);
+        $arg = htmlentities($arg);
+        $arg = trim($arg);
+        return $arg;
+    }
 
-                $pdoname = "darkcity";
-                $pdocredusr = "root";
-                $pdocredpass = "root";
+    $pdoname = "darkcity";
+    $pdocredusr = "root";
+    $pdocredpass = "root";
 
-                try{
-                    $db = new PDO('mysql:host=localhost;dbname='. $pdoname .';charset=utf8', $pdocredusr, $pdocredpass);
-                    if(isset($_GET['weapontype']) && !empty($_GET['weapontype'])){
-                        $weapontype = htmlspecialchars(secure($_GET['weapontype']));
-                        $sqlQuery = 'SELECT * FROM market WHERE itemtype="weapon" AND class="'. $weapontype .'"';
-                    }else{
-                        $sqlQuery = 'SELECT * FROM market WHERE itemtype="weapon"';
-                    }
-                   
-                    foreach  ($db->query($sqlQuery) as $row) 
-                    {
-                        echo '<div class="'. $row['class'] . '" style="background-image:url(images/weapons/'. $row['image'] .');"><div class="band"><p>' . $row['name'] . ' - '. $row['price'] .'$</p></div></div>';
-                    }
-                }
-                catch (Exception $e){
-                        header("location:home.php?err=dberror");
-                        exit();
-                }
-            ?>
+    try{
+        $db = new PDO('mysql:host=localhost;dbname='. $pdoname .';charset=utf8', $pdocredusr, $pdocredpass);
+        if(isset($_GET['weapontype']) && !empty($_GET['weapontype'])){
+            $weapontype = htmlspecialchars(secure($_GET['weapontype']));
+            $sqlQuery = 'SELECT * FROM market WHERE itemtype="weapon" AND class="'. $weapontype .'"';
+        }else{
+            $sqlQuery = 'SELECT * FROM market WHERE itemtype="weapon"';
+        }
+        
+        foreach  ($db->query($sqlQuery) as $row) 
+        {
+            echo '<div class="'. $row['class'] . ' article" style="background-image:url(images/weapons/'. $row['image'] .');"><div class="band"><p>' . $row['name'] .'</p><p>' . $row['price'] .'$</p></div></div>';
+        }
+    }
+    catch (Exception $e){
+            header("location:home.php?err=dberror");
+            exit();
+    }
+ ?>
         </div>
     </div>
 </body>
