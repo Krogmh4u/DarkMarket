@@ -27,25 +27,25 @@
 				</form>
 			</div>
 
-			<?php
-                if(isset($_GET['err']) && !empty($_GET['err']))
-                {
-                    $err = htmlspecialchars($_GET['err']);
-                    switch ($err) 
-                    {
-                        case 'incorrectpassword':
-                            ?>
-                                <p class="wrong">Incorrect Password.</p>
-                            <?php
-                        break;
-                        case 'incorrectuser':
-                            ?>
-                                <p class="wrong">Incorrect Username.</p>
-                            <?php
-                    break;
-                    }
-                }
-            ?>
+<?php
+	if(isset($_GET['err']) && !empty($_GET['err']))
+	{
+		$err = htmlspecialchars($_GET['err']);
+		switch ($err) 
+		{
+			case 'incorrectpassword':
+				?>
+					<p class="wrong">Incorrect Password.</p>
+				<?php
+			break;
+			case 'incorrectuser':
+				?>
+					<p class="wrong">Incorrect Username.</p>
+				<?php
+		break;
+		}
+	}
+?>
 			
 		</div>
 	</div>

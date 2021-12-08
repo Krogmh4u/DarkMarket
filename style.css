@@ -5,6 +5,7 @@
   --text-color: white;
   --lighten-color1: rgba(255, 255, 255, .05);
   --lighten-color2: rgba(255, 255, 255, .10);
+  --alert-color: red;
 }
 
 * {
@@ -46,6 +47,7 @@ li{
 .menu a {
   z-index: 1;
   color: var(--text-color);
+  text-decoration: none;
   padding: 1em 40px;
   user-select: none;
 }

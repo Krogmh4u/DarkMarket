@@ -1,0 +1,65 @@
+:root {
+  --background-color: #0a0a0a;
+  --primary-color: #202020;
+  --secondary-color: #2a2a2a;
+  --text-color: white;
+  --lighten-color1: rgba(255, 255, 255, .05);
+  --lighten-color2: rgba(255, 255, 255, .10);
+  --alert-color: red;
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+  user-select: none;
+}
+
+body {
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  background-image: url(images/abstract_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  justify-content: center;
+  display: grid;
+  grid-template-rows: auto auto auto;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.account {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 1000px;
+  height: 750px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.menu {
+  background-color: var(--secondary-color);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: var(--text-color);
+}
+
+.menu p {
+  font-size: 1.2em;
+  margin-top: 25px;
+  padding: 1.25rem 0 1.25rem 20px;
+  border-top: 2px solid var(--lighten-color1);
+  border-bottom: 2px solid var(--lighten-color1);
+  transition: 0.3s;
+}
+
+.menu p:hover {
+  cursor: pointer;
+  background-color: var(--lighten-color1);
+}

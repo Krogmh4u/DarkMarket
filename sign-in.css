@@ -6,7 +6,6 @@
   --lighten-color1: rgba(255, 255, 255, .05);
   --lighten-color2: rgba(255, 255, 255, .10);
   --alert-color: red;
-  --gradient-color: linear-gradient(90deg, rgba(0,135,114,1) 0%, rgba(102,0,157,1) 100%);
 }
 
 * {
