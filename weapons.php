@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<?php
+	session_start();
+
+	if(isset($_SESSION['nickname']) && !empty($_SESSION['nickname'])){
+		
+	}else{
+		header("location:index.php");
+		exit();
+	}
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -27,12 +37,38 @@
     </div>
     <div class="wrapper">
         <div class="grid-layout">
-            <div class="ar"><div class="band"><p>M4A1 - 500$</p></div></div>
-            <div class="smg"><div class="band"><p>M4A1 - 500$</p></div></div>
-            <div class="pistol"><div class="band"><p>M4A1 - 500$</p></div></div>
-            <div class="tool"><div class="band"><p>M4A1 - 500$</p></div></div>
-            <div class="tool"><div class="band"><p>M4A1 - 500$</p></div></div>
-            <div class="smg"><div class="band"><p>M4A1 - 500$</p></div></div>
+            <!-- <div class="ar"><div class="band"><p>M4A1 - 500$</p></div></div> -->
+            <?php
+                function secure($arg){
+                    $arg = htmlspecialchars($arg);
+                    $arg = htmlentities($arg);
+                    $arg = trim($arg);
+                    return $arg;
+                }
+
+                $pdoname = "darkcity";
+                $pdocredusr = "root";
+                $pdocredpass = "root";
+
+                try{
+                    $db = new PDO('mysql:host=localhost;dbname='. $pdoname .';charset=utf8', $pdocredusr, $pdocredpass);
+                    if(isset($_GET['weapontype']) && !empty($_GET['weapontype'])){
+                        $weapontype = htmlspecialchars(secure($_GET['weapontype']));
+                        $sqlQuery = 'SELECT * FROM market WHERE itemtype="weapon" AND class="'. $weapontype .'"';
+                    }else{
+                        $sqlQuery = 'SELECT * FROM market WHERE itemtype="weapon"';
+                    }
+                   
+                    foreach  ($db->query($sqlQuery) as $row) 
+                    {
+                        echo '<div class="'. $row['class'] . '"><div class="band"><p>' . $row['name'] . ' - '. $row['price'] .'$</p></div></div>';
+                    }
+                }
+                catch (Exception $e){
+                        header("location:home.php?err=dberror");
+                        exit();
+                }
+            ?>
         </div>
     </div>
 </body>
