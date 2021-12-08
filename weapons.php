@@ -61,7 +61,7 @@
                    
                     foreach  ($db->query($sqlQuery) as $row) 
                     {
-                        echo '<div class="'. $row['class'] . '"><div class="band"><p>' . $row['name'] . ' - '. $row['price'] .'$</p></div></div>';
+                        echo '<div class="'. $row['class'] . '" style="background-image:url(images/'. $row['image'] .');"><div class="band"><p>' . $row['name'] . ' - '. $row['price'] .'$</p></div></div>';
                     }
                 }
                 catch (Exception $e){
