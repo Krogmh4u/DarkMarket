@@ -39,6 +39,7 @@
         <div class="grid-layout">
             <!-- <div class="ar article" style="background-image:url(images/weapons/tamere.jpg);"><div class="band"><p>M4A1</p><p>1200$</p></div></div>
             <div class="pistol article" style="background-image:url(images/weapons/putepute.jpg);"><div class="band"><p>Desert Eagle</p><p>800$</p></div></div> -->
+<!-- LE PHP DE SES MORTS -->
 <?php 
     function secure($arg){
         $arg = htmlspecialchars($arg);
@@ -70,6 +71,7 @@
             exit();
     }
  ?>
+ <!-- LE PHP DE SES MORTS -->
         </div>
     </div>
 </body>

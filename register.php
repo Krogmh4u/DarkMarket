@@ -34,27 +34,41 @@
 				<button type="submit">Register</button>
 				</form>
 			</div>
+<!-- LE PHP DE SES MORTS -->
+<?php
+	if(isset($_GET['err']) && !empty($_GET['err']))
+	{
+		$err = htmlspecialchars($_GET['err']);
+		switch ($err) 
+		{
+			case 'userexists':
+				?>
+					<p class="wrong">Username already exists.</p>
+				<?php
+			break;
+			case 'success':
+				?>
+				<p class="correct"></p>
+				<script>
+					let seconds = 4;
+					let message = document.querySelector(".correct");
 
-			<?php
-				if(isset($_GET['err']) && !empty($_GET['err']))
-				{
-					$err = htmlspecialchars($_GET['err']);
-					switch ($err) 
-					{
-						case 'userexists':
-							?>
-								<p class="wrong">Username already exists.</p>
-							<?php
-						break;
-						case 'succes':
-							?>
-								<p class="wrong">Account successfully created.</p>
-							<?php
-					break;
-					}
-				}
-			?>
-
+					function countdown(){
+						seconds -= 1;
+						message.innerText = "Account successfully created.";
+						message.innerText = "You'll be redirected in " + seconds + " seconds";
+					} let wait = setInterval(countdown, 1000);
+					setTimeout(function(){
+						window.location.href = 'index.php';
+					}, 4000);
+				</script>
+					<!-- <p class="wrong">Account successfully created. <br>You'll be redirected in</p> -->
+				<?php
+		break;
+		}
+	}
+?>
+<!-- LE PHP DE SES MORTS -->
 		</div>
 	</div>
 </body>
