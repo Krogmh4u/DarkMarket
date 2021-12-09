@@ -55,9 +55,9 @@
 
 					function countdown(){
 						seconds -= 1;
-						message.innerText = "Account successfully created.";
 						message.innerText = "You'll be redirected in " + seconds + " seconds";
 					} let wait = setInterval(countdown, 1000);
+
 					setTimeout(function(){
 						window.location.href = 'index.php';
 					}, 4000);
