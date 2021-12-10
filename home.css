@@ -64,12 +64,12 @@ li{
 
 .log-out {
   z-index: 1;
-  cursor: pointer;
   background-color: var(--secondary-color);
   transition: 0.3s;
 }
 
 .log-out:hover {
+  cursor: pointer;
   background-color: var(--lighten-color2);
 }
 
@@ -133,16 +133,6 @@ li{
   cursor: pointer;
   transform: scale(1.05);
 }
-
-/* ----- hover -----*/
-.log-out:hover {
-  cursor: pointer;
-  animation-name: log_out_hover;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-}
-/* ----- hover -----*/
 
 /* ----- active -----*/
 
