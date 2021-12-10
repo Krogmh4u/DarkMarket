@@ -6,6 +6,8 @@
 		{
 			$sess = htmlspecialchars($_GET['sess']);
 			if($sess == "unset"){
+				session_start() ;
+
 				session_destroy();
 				header("location:index.php");
 				exit();
