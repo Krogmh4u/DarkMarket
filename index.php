@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
 	<?php
-		if((isset($_SESSION['nickname']) && !empty($_SESSION['nickname'])))
-		{
-			header("location:home.php");
-			exit();
-		}
+		session_start();
 		if(isset($_GET['sess']) && !empty($_GET['sess']))
 		{
 			$sess = htmlspecialchars($_GET['sess']);
 			if($sess == "unset"){
-				session_start() ;
-
 				session_destroy();
 				header("location:index.php");
 				exit();
 			}
+		}
+		else if(isset($_SESSION['nickname']) && !empty($_SESSION['nickname']))
+		{
+			header("location:home.php");
+			exit();
 		}
 	?>
 	<meta charset="utf-8">

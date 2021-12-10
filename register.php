@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<?php
+	    session_start();
 		if((isset($_SESSION['nickname']) && !empty($_SESSION['nickname'])))
 		{
 			header("location:home.php");
