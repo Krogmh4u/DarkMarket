@@ -3,7 +3,7 @@
 	session_start();
 
 	if(isset($_SESSION['nickname']) && !empty($_SESSION['nickname'])){
-		
+		echo $_SESSION['nickname'];
 	}else{
 		header("location:index.php");
 		exit();
