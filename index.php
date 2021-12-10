@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
 	<?php
+		if((isset($_SESSION['nickname']) && !empty($_SESSION['nickname'])))
+		{
+			header("location:home.php");
+			exit();
+		}
 		if(isset($_GET['sess']) && !empty($_GET['sess']))
 		{
 			$sess = htmlspecialchars($_GET['sess']);

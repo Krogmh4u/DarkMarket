@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<?php
+		if((isset($_SESSION['nickname']) && !empty($_SESSION['nickname'])))
+		{
+			header("location:home.php");
+			exit();
+		}
+	?>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="register.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
