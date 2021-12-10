@@ -2,12 +2,8 @@
 <?php
 	session_start();
 
-	if(isset($_SESSION['nickname']) && !empty($_SESSION['nickname'])){
-		
-	}else{
+	if(!((isset($_SESSION['nickname']) && !empty($_SESSION['nickname']))))
 		header("location:index.php");
-		exit();
-	}
 ?>
 <html lang="en">
 <head>
@@ -22,7 +18,7 @@
 	<nav>
 		<ul class="menu">
 			<li><a href="account.php" class="links">Account</a></li>
-			<li><a class="log-out">Log out</a></li>
+			<li><a class="log-out" href="index.php?sess=unset">Log out</a></li>
 		</ul>
 	</nav>
 	<form action="" class="search-box">
