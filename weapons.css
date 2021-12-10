@@ -54,6 +54,7 @@ li{
 .menu a {
   z-index: 1;
   color: var(--text-color);
+  text-decoration: none;
   padding: 1em 40px;
   user-select: none;
 }

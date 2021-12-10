@@ -21,7 +21,7 @@
 <body>
     <nav>
 		<ul class="menu">
-			<li><a class="links">Account</a></li>
+            <li><a href="account.php" class="links">Account</a></li>
 			<li><a class="log-out">Log out</a></li>
 		</ul>
 	</nav>
