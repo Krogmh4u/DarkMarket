@@ -133,17 +133,3 @@ li{
   cursor: pointer;
   transform: scale(1.05);
 }
-
-/* ----- active -----*/
-
-.menu a:active {
-  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .3);
-}
-
-.log-out:active {
-  
-}
-
-.categories a:active {
-  box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, .3);
-}
