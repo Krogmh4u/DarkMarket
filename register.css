@@ -61,7 +61,7 @@ body {
 }
 
 .login-form input:focus {
-  outline: purple solid 1px;
+  outline: blue solid 1px;
 }
 
 .form-label label {
